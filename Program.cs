@@ -18,6 +18,7 @@ namespace choose
 
 			Console.WriteLine(welcome);
 			Thread.Sleep(2500);
+			Console.Clear();
 
 			String currentPath = @"C:\";
 

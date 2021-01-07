@@ -50,7 +50,7 @@ namespace Options
 		}
 		public void Show(int current, int page, int pageMax)
 		{
-			Console.Clear();
+			Console.SetCursorPosition(0, 0);
 			for (int i = page * pageMax; i < (page + 1) * pageMax && i < _list.Count; i++)
 			{
 				if (i == current)
