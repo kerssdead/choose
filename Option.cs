@@ -105,19 +105,21 @@ namespace Options
 		}
 		public int GetNextPage(int currentPage, int pageMax)
 		{
-			Console.Clear();
-
 			if ((currentPage + 1) * pageMax <= _list.Count)
+			{
+				Console.Clear();
 				return currentPage + 1;
+			}
 			else
 				return currentPage;
 		}
 		public int GetPrevPage(int currentPage, int pageMax)
 		{
-			Console.Clear();
-
 			if ((currentPage - 1) * pageMax >= 0)
+			{
+				Console.Clear();
 				return currentPage - 1;
+			}
 			else
 				return currentPage;
 		}
