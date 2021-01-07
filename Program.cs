@@ -68,7 +68,8 @@ namespace choose
 				}
 			}
 
-			Console.WriteLine("\nControl [Up, Down, Left, Right], Quit [Esc], Open File/Directory [Enter]");
+			Console.WriteLine("\nCurrent page: " + (page + 1));
+			Console.WriteLine("Control [Up, Down, Left, Right], Quit [Esc], Open File/Directory [Enter]");
 		}
 		public void OpenTxt(string file, string extension)
 		{
@@ -156,10 +157,11 @@ namespace choose
 			Console.WriteLine(welcome);
 			Thread.Sleep(2500);
 
-			String currentPath = @"C:\Users\Sergey\source\repos\choose";
-			
+			String currentPath = @"C:\";
+
 			int currentElem = 0,
-				currentPage = 0;
+				currentPage = 0,
+				pth = 0;
 			Option currentDirectory = new Option();
 			currentDirectory.Set(currentPath);
 
@@ -205,10 +207,15 @@ namespace choose
 					else
 						if (currentDirectory.GetCurrentExt(currentElem) == "dir")
 					{
-						currentPath = currentPath + '\\' + currentDirectory.GetCurrentElement(currentElem);
+						if (pth == 0)
+							currentPath = currentPath + currentDirectory.GetCurrentElement(currentElem);
+						else
+							currentPath = currentPath + '\\' + currentDirectory.GetCurrentElement(currentElem);
+
 						currentDirectory = currentDirectory.OpenDirectory(currentPath);
 						currentElem = 0;
 						currentPage = 0;
+						pth++;
 					}
 					else
 						if (currentDirectory.GetCurrentExt(currentElem) == "back")
