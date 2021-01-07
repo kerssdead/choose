@@ -7,6 +7,17 @@ namespace Cnsl
 {
 	class Interpreter
 	{
+		public static String GetTextDir()
+		{
+			String[] Dir = Directory.GetCurrentDirectory().Split('\\');
+			String Path = "";
+			ConsoleKeyInfo Key;
+			for (int i = 0; Dir[i] != "bin"; i++)
+				Path += Dir[i] + '\\';
+			Path += "\\textFiles\\";
+
+			return Path;
+		}
 		public static String[] Input()
 		{
 			Console.Clear();
@@ -33,19 +44,15 @@ namespace Cnsl
 		{
 			String[] Return = new string[5];
 
-			Return[0] = Disk + ":\\";
-			Return[1] = "1";
+			Return[1] = Disk + ":\\";
+			Return[0] = "1";
 
 			return Return;
 		}
 		public static void Help()
 		{
-			String[] Dir = Directory.GetCurrentDirectory().Split('\\');
-			String Path = "";
+			String Path = GetTextDir() + "help.txt";
 			ConsoleKeyInfo Key;
-			for (int i = 0; Dir[i] != "bin"; i++)
-				Path += Dir[i] + '\\';
-			Path += "\\textFiles\\help.txt";
 
 			using (StreamReader sr = new StreamReader(Path))
 			{

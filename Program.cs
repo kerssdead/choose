@@ -68,10 +68,10 @@ namespace choose
 				{
 					String[] Return = Cnsl.Interpreter.Input();
 
-					switch(Convert.ToInt32(Return[1]))
+					switch(Convert.ToInt32(Return[0]))
 					{
 						case 1:
-							currentPath = Return[0];
+							currentPath = Return[1];
 							currentDirectory = currentDirectory.OpenDirectory(currentPath);
 							currentPage = 0;
 							currentElem = 0;
