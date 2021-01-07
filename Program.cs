@@ -178,13 +178,13 @@ namespace choose
 
 				if (key.Key == ConsoleKey.DownArrow)
 				{
-					if (currentElem + 1 < currentDirectory.GetSize())
+					if (currentElem + 1 < currentDirectory.GetSize() && currentElem + 1 < (currentPage + 1) * pageMax)
 						currentElem++;
 				}
 				else
 					if (key.Key == ConsoleKey.UpArrow)
 				{
-					if (currentElem - 1 > -1)
+					if (currentElem - 1 > -1 && currentElem - 1 > currentPage * pageMax)
 						currentElem--;
 				}
 				else
