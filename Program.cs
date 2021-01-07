@@ -63,6 +63,9 @@ namespace choose
 					currentElem = currentPage * pageMax;
 				}
 				else
+					if (key.Key == ConsoleKey.Oem3)
+				{ Console.WriteLine(welcome); Thread.Sleep(5000); }
+				else
 					if (key.Key == ConsoleKey.Enter)
 				{
 					if (currentDirectory.GetCurrentExt(currentElem) == "exe")
