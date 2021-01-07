@@ -18,7 +18,7 @@ namespace choose
 							 "				|__/|__/   \\___/  /_/  /_/   \\____/   \\__,_/  /_/ /_/ /_/ \n";
 
 			Console.WriteLine(welcome);
-			Thread.Sleep(2500);
+			Thread.Sleep(1000);
 			Console.Clear();
 
 			String currentPath = @"C:\";
