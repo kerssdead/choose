@@ -1,0 +1,13 @@
+C:\Users\Sergey\source\repos\choose\bin\Debug\netcoreapp3.1\choose.exe
+C:\Users\Sergey\source\repos\choose\bin\Debug\netcoreapp3.1\choose.deps.json
+C:\Users\Sergey\source\repos\choose\bin\Debug\netcoreapp3.1\choose.runtimeconfig.json
+C:\Users\Sergey\source\repos\choose\bin\Debug\netcoreapp3.1\choose.runtimeconfig.dev.json
+C:\Users\Sergey\source\repos\choose\bin\Debug\netcoreapp3.1\choose.dll
+C:\Users\Sergey\source\repos\choose\bin\Debug\netcoreapp3.1\choose.pdb
+C:\Users\Sergey\source\repos\choose\obj\Debug\netcoreapp3.1\choose.csprojAssemblyReference.cache
+C:\Users\Sergey\source\repos\choose\obj\Debug\netcoreapp3.1\choose.AssemblyInfoInputs.cache
+C:\Users\Sergey\source\repos\choose\obj\Debug\netcoreapp3.1\choose.AssemblyInfo.cs
+C:\Users\Sergey\source\repos\choose\obj\Debug\netcoreapp3.1\choose.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\source\repos\choose\obj\Debug\netcoreapp3.1\choose.dll
+C:\Users\Sergey\source\repos\choose\obj\Debug\netcoreapp3.1\choose.pdb
+C:\Users\Sergey\source\repos\choose\obj\Debug\netcoreapp3.1\choose.genruntimeconfig.cache
