@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using Options;
+using Cnsl;
 
 namespace choose
 {
@@ -64,7 +65,20 @@ namespace choose
 				}
 				else
 					if (key.Key == ConsoleKey.Oem3)
-				{ Console.WriteLine(welcome); Thread.Sleep(5000); }
+				{
+					String[] Return = Cnsl.Interpreter.Input();
+
+					switch(Convert.ToInt32(Return[1]))
+					{
+						case 1:
+							currentPath = Return[0];
+							currentDirectory = currentDirectory.OpenDirectory(currentPath);
+							currentPage = 0;
+							currentElem = 0;
+							Console.Clear();
+							break;
+					}
+				}
 				else
 					if (key.Key == ConsoleKey.Enter)
 				{

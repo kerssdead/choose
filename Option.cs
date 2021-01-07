@@ -68,7 +68,7 @@ namespace Options
 			}
 
 			Console.WriteLine("\nCurrent page: " + (page + 1));
-			Console.WriteLine("Control [Up, Down, Left, Right], Quit [Esc], Open File/Directory [Enter]");
+			Console.WriteLine("Control [Up, Down, Left, Right], Quit [Esc], Open File/Directory [Enter], Console [~]");
 		}
 		public void OpenTxt(string file, string extension)
 		{
