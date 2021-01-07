@@ -90,9 +90,23 @@ namespace choose
 
 						String[] newPath = currentPath.Split('\\');
 						currentPath = "";
-						for (int i = 1; i < newPath.Length - 1; i++)
+						for (int i = 0; i < newPath.Length - 1; i++)
+						{
+							if (newPath.Length == 2)
+							{
+								currentPath = @"C:\";
+								break;
+							}
+							else
+							{
+								if (i == 0)
+								{
+									currentPath += @"C:";
+									continue;
+								}
+							}
 							currentPath += '\\' + newPath[i];
-
+						}
 						currentDirectory = currentDirectory.OpenDirectory(currentPath);
 						currentElem = 0;
 						currentPage = 0;
