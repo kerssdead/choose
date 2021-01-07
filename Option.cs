@@ -72,6 +72,8 @@ namespace Options
 		}
 		public void OpenTxt(string file, string extension)
 		{
+			Console.Clear();
+
 			using (StreamReader sr = new StreamReader(file + '.' + extension))
 			{
 				Console.Clear();
@@ -94,6 +96,8 @@ namespace Options
 		}
 		public Option OpenDirectory(string dir)
 		{
+			Console.Clear();
+
 			Option NewFolder = new Option();
 			NewFolder.Set(dir);
 
@@ -101,6 +105,8 @@ namespace Options
 		}
 		public int GetNextPage(int currentPage, int pageMax)
 		{
+			Console.Clear();
+
 			if ((currentPage + 1) * pageMax <= _list.Count)
 				return currentPage + 1;
 			else
@@ -108,6 +114,8 @@ namespace Options
 		}
 		public int GetPrevPage(int currentPage, int pageMax)
 		{
+			Console.Clear();
+
 			if ((currentPage - 1) * pageMax >= 0)
 				return currentPage - 1;
 			else
