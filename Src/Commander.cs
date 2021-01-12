@@ -5,12 +5,12 @@ using System.IO;
 
 namespace Options
 {
-	class Option
+	class Commander
 	{
 		private List<String> _list;
 		private List<String> _ext;
 
-		public Option()
+		public Commander()
 		{
 			_list = new List<String>();
 			_ext = new List<String>();
@@ -87,6 +87,8 @@ namespace Options
 					key = Console.ReadKey();
 				} while (key.Key != ConsoleKey.Escape);
 
+				Console.Clear();
+
 				return;
 			}
 		}
@@ -94,11 +96,11 @@ namespace Options
 		{
 			Process.Start(file + '.' + extension);
 		}
-		public Option OpenDirectory(string dir)
+		public Commander OpenDirectory(string dir)
 		{
 			Console.Clear();
 
-			Option NewFolder = new Option();
+			Commander NewFolder = new Commander();
 			NewFolder.Set(dir);
 
 			return NewFolder;

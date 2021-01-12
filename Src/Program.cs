@@ -9,6 +9,8 @@ namespace choose
 	{
 		static void Main(string[] args)
 		{
+			Cnsl.Interpreter.Update();
+
 			const int pageMax = 26;
 			const String welcome = "\n\n\n\n\n\n\n\n\n\n\n" +
 							 "				 _       __           __   __   ______                    \n" +
@@ -26,7 +28,7 @@ namespace choose
 			int currentElem = 0,
 				currentPage = 0,
 				pth = 0;
-			Option currentDirectory = new Option();
+			Commander currentDirectory = new Commander();
 			currentDirectory.Set(currentPath);
 
 			bool esc = false;
