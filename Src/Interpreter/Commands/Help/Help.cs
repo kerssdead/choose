@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 
-namespace Cnsl
+namespace Interpreter
 {
-	partial class Interpreter
+	partial class InterpreterInput
 	{
 		public static void Help()
 		{

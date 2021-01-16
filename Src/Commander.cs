@@ -9,11 +9,13 @@ namespace Options
 	{
 		private List<String> _list;
 		private List<String> _ext;
+		private List<String> _size;
 
 		public Commander()
 		{
 			_list = new List<String>();
 			_ext = new List<String>();
+			_size = new List<String>();
 		}
 		public void Set(string path)
 		{
@@ -45,6 +47,15 @@ namespace Options
 			for (int i = 0; i < _list.Count; i++)
 				_list[i] = GetLocalName(_list[i]);
 
+			for (int i = 0; i < _list.Count; i++)
+			{
+				if (_ext[i] == "txt" || _ext[i] == "cs" || _ext[i] == "exe" || _ext[i] == "bin"
+					|| _ext[i] == "m4a" || _ext[i] == "mp3")
+					_size.Add(BytesToString(new FileInfo(path + '\\' + _list[i] + '.' + _ext[i]).Length));
+				else
+					_size.Add("-1"); 
+			}
+
 			_list.Add("..");
 			_ext.Add("back");
 		}
@@ -63,7 +74,14 @@ namespace Options
 				else
 				{
 					Console.Write(_ext[i] + "\t");
-					Console.WriteLine(_list[i]);
+					Console.Write(_list[i]);
+					for (int t = 0; t < (8 - _list[i].Length / 8); t++)
+						Console.Write('\t');
+
+					if (_ext[i] != "back" && _size[i] != "-1")
+						Console.WriteLine(_size[i]);
+					else
+						Console.WriteLine();
 				}
 			}
 
@@ -142,6 +160,17 @@ namespace Options
 		public string GetCurrentExt(int index)
 		{
 			return _ext[index];
+		}
+
+		public static String BytesToString(long byteCount)
+		{
+			string[] suf = { "Byte", "KB", "MB", "GB", "TB", "PB", "EB" };
+			if (byteCount == 0)
+				return "0" + suf[0];
+			long bytes = Math.Abs(byteCount);
+			int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+			double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+			return (Math.Sign(byteCount) * num).ToString() + suf[place];
 		}
 	}
 }

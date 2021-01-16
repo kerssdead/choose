@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Cnsl
+namespace Interpreter
 {
-	partial class Interpreter
+	partial class InterpreterInput
 	{
 		public static String[] Input()
 		{
